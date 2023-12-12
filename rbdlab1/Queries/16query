@@ -1,0 +1,7 @@
+SELECT maker
+FROM product
+WHERE model = (
+			SELECT model
+			FROM "Printer"
+			WHERE price = (SELECT MIN(price) FROM "Printer" WHERE color = 'C') 
+			)

@@ -1,0 +1,4 @@
+SELECT product.maker, product.model, "Printer"."type", "Printer".price
+FROM product
+JOIN "Printer" ON product.model = "Printer".model
+WHERE "Printer".color = 'C' AND product."type" = 'Printer';

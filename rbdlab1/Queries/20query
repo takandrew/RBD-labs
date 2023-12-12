@@ -1,0 +1,4 @@
+SELECT AVG("PC".price)
+FROM product
+JOIN "PC" ON product.model = "PC".model
+WHERE product.maker = 'A'

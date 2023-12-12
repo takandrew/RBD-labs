@@ -1,0 +1,10 @@
+SELECT maker
+FROM product
+WHERE model = (SELECT model
+				FROM (
+					SELECT model, speed
+					FROM "PC"
+					WHERE "Ram" = (SELECT MIN("Ram") FROM "PC")
+					) as subquery
+				ORDER BY speed DESC
+				LIMIT 1)

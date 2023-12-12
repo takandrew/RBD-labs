@@ -1,0 +1,4 @@
+SELECT model, speed, "Hd"
+FROM "PC"
+WHERE "PC".price <= 2000 
+	AND ("PC"."Rd" = '12xDVD' OR "PC"."Rd" = '16xDVD')

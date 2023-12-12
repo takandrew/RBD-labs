@@ -1,0 +1,4 @@
+#DB storages.
+postgre/postgre_database
+pgadmin/pgadmin_data
+mongo/mongo_database

@@ -1,0 +1,10 @@
+SELECT AVG(price)
+FROM (	SELECT "PC".price
+	  	FROM product
+	  	JOIN "PC" ON product.model = "PC".model
+		WHERE product.maker = 'D'
+	 UNION ALL
+	 	SELECT "Laptop".price
+	  	FROM product
+	  	JOIN "Laptop" ON product.model = "Laptop".model
+		WHERE product.maker = 'D') as subquery

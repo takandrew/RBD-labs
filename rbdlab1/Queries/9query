@@ -1,0 +1,4 @@
+SELECT "Hd"
+FROM "PC"
+GROUP BY "Hd"
+HAVING COUNT("Hd") > 1;

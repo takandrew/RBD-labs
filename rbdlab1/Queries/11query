@@ -1,0 +1,17 @@
+SELECT maker 
+FROM (
+	SELECT maker, COUNT(DISTINCT model)
+	FROM (
+			SELECT maker, "PC".model 
+			FROM product
+			JOIN "PC" ON product.model = "PC".model
+			WHERE "PC".speed >= 1000
+		UNION ALL
+			SELECT maker, "Laptop".model
+			FROM product
+			JOIN "Laptop" on product.model = "Laptop".model
+			WHERE "Laptop".speed >= 1000
+		) AS subquery
+	GROUP BY maker
+	HAVING COUNT(model) > 1
+	 ) AS subqueryWithModel

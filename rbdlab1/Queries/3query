@@ -1,0 +1,3 @@
+SELECT model, "Ram", "Rd"
+FROM "Laptop"
+WHERE price > 2000;

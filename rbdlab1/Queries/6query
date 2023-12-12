@@ -1,0 +1,5 @@
+SELECT product.maker, "Laptop".speed
+FROM product
+JOIN "Laptop" ON product.model = "Laptop".model
+WHERE product."type" = 'Laptop'
+	AND "Laptop"."Hd" >= 15

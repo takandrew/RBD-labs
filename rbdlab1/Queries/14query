@@ -1,0 +1,4 @@
+SELECT *
+FROM "Laptop"
+WHERE speed < (SELECT MIN(speed)
+			  FROM "PC");

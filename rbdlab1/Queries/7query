@@ -1,0 +1,17 @@
+SELECT model, price 
+FROM (
+		SELECT product.model, "PC".price
+		FROM product
+		JOIN "PC" ON product.model = "PC".model
+		WHERE product."type" = 'Pc' AND product.maker = 'B'
+	UNION ALL
+		SELECT product.model, "Laptop".price
+		FROM product
+		JOIN "Laptop" ON product.model = "Laptop".model
+		WHERE product."type" = 'Laptop' AND product.maker = 'B'
+	UNION ALL
+		SELECT product.model, "Printer".price
+		FROM product
+		JOIN "Printer" ON product.model = "Printer".model
+		WHERE product."type" = 'Printer' AND product.maker = 'B'
+	) AS products;

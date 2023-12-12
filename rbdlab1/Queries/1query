@@ -1,0 +1,3 @@
+SELECT model, speed, "Hd"
+FROM "PC"
+WHERE price < 1200;
